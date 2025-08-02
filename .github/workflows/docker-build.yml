@@ -9,10 +9,10 @@ jobs:
         
         steps:
             - name: Checkout code
-              uses: action/checkout@v1
+              uses: action/checkout@v3
 
             - name: Set up Docker build
-              uses: docker/setup-buildx@v1
+              uses: docker/setup-buildx@v3
 
             - name: Build Docker Image
               run: docker build -t my-java-app . 
