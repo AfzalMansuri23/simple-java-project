@@ -16,6 +16,14 @@ jobs:
 
             - name: Build Docker Image
               run: docker build -t my-java-app . 
+            - name: Authenticate using PAT
+              run: |
+                   git config --global user.name "github-actions"
+                   git config --global user.email "actions@github.com"
+                   git remote set-url origin https://${{ secrets.MY_PAT }}@github.com/AfzalMansuri23/simple-java-project.git
+                   git add output.txt
+                   git commit -m "Add log"
+                   git push
 
             - name: 🚀 Run app and save output
               run: docker run --rm my-java-app > output.txt
