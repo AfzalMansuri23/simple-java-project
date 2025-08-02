@@ -15,7 +15,7 @@ jobs:
               uses: docker/setup-buildx@v1
 
             - name: Build Docker Image
-              uses: docker build -t my-java-app . 
+              run: docker build -t my-java-app . 
 
             - name: 🚀 Run app and save output
               run: docker run --rm my-java-app > output.txt
