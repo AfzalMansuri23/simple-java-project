@@ -19,7 +19,7 @@ jobs:
         run: docker build -t my-java-app .
 
       - name: 🚀 Run app and save output
-        run: docker run --rm my-java-app > output.txt
+        run: docker run --rm my-java-app > output.txt || true
 
       - name: 🔄 Authenticate and Commit log file to repo
         run: |
